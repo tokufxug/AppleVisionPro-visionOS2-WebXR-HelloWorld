@@ -1,0 +1,50 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Apple Vision Pro (visionOS2) Hello World</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene cursor="rayOrigin:xrselect;" raycaster="objects: [mixin=mouseover]">
+        <a-mixin id="mouseover" 
+            animation__c1="property:color; to:#ff44ff; type:color; startEvents:mouseenter; dur:300;"
+            animation__c2="property:color; type:color; startEvents:mouseleave; dur:400;"
+            animation__click="property:object3D.position.y; to:2; startEvents:click; dur:1000;">
+        </a-mixin>
+
+        <a-box 
+            position="-2 1.25 -3.5" 
+            rotation="0 45 0" 
+            color="#4CC3D9"
+            shadow
+            mixin="mouseover"
+            animation__c1="from:#4CC3D9" 
+            animation__c2="to:#4CC3D9">
+        </a-box>
+        
+        <a-sphere 
+            position="0 1.25 -4" 
+            radius="1.0" 
+            color="#FF0000"
+            shadow
+            mixin="mouseover"
+            animation__c1="from:#FF0000" 
+            animation__c2="to:#FF0000">
+        </a-sphere>
+
+        <a-cylinder 
+            position="1.5 1.25 -2" 
+            radius="0.5" 
+            height="1.5" 
+            color="#FFC65D"
+            shadow
+            mixin="mouseover"
+            animation__c1="from:#FFC65D" 
+            animation__c2="to:#FFC65D">
+        </a-cylinder>
+            
+        <a-plane position="0 -0.5 -5" rotation="-90 0 0" width="8" height="8" color="#7BC8A4" shadow></a-plane>
+        <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+</body>
+</html>
